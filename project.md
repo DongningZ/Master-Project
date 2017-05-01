@@ -18,7 +18,7 @@ I was asking a new data set since this data set is with way too many noises and 
 
 Chris decided this project should have a review and restart.
 
-Before anything fancy the basic presentation of the data should be the first thing done.
+Before anything fancy the basic presentation of the data should be the first thing to do.
 
 The basic presentation of this type data mainly are two approaches: aggregation and average/smooth. 
 
@@ -36,7 +36,7 @@ In this data, by aggregation we can obtain :
 6. hourly in day
 
 
-There are mainly 2 types of plots considering:
+There are mainly 3 types of plots considering:
 1. Simple display plots with different plot type for any given time period
 Bar plots and more should be consider.
 
