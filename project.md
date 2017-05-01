@@ -53,11 +53,4 @@ Bar plots and more should be consider.
 ##### Things need to consider:
 1. The input of time period of all the plots above should be flexible
 2. The label and axis should response to the aggregation level and input time period.
-### Average/Smooth
 
-#### Ideas
-##### 1. average the data at the same time (if we have enough data)
-
-The data at same time for every year could be averaged. For example.
-
-##### 2.
