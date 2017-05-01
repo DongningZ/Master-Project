@@ -6,6 +6,8 @@
   * average the smooth obtained at low aggregated levels
   * aggregate the smooth obtained at low aggregated levels?
 2. How to deal with missing values or extreme low value
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/plot1.JPG)
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/plot2.JPG)
   * imputation
   1. last value carry forward, easy and fast
   2. multiple imputation, reliable but slow
