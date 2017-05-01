@@ -45,7 +45,7 @@ Bar plots and more should be consider.
  * input time period should be flexible. For example, choosing June only to compare.
 
 3. To extract certain patterns
-  * dily pattern over a week
+  * daily pattern over a week
   * hourly pattern over a day
 
 
