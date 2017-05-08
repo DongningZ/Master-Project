@@ -4,9 +4,12 @@
 
 
 ## update on 02/05/2017 - 07/05/2017
-I received total 5 household electricity data and one building data.
+I received total 5 household electricity data and 1 building data.
+
 By testing these data, I found many errors with the functions.
+
 More time needed to refine and debug these functions.
+
 There are mainly 3 functions:
 1. Simply display plot function
 Current status : basic structure done, need to add more features.
