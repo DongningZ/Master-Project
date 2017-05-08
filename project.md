@@ -1,4 +1,20 @@
 # Master-Project
+## Things to discuss on 09/05/2017
+1. look at the data sets.
+
+
+## update on 02/05/2017 - 07/05/2017
+I received total 5 household electricity data and one building data.
+By testing these data, I found many errors with the functions.
+More time needed to refine and debug these functions.
+There are mainly 3 functions:
+1. Simply display plot function
+Current status : basic structure done, need to add more features.
+2. Comparing plots function
+Current status :still working on basic structure as many levels of aggregation invovled.
+3. Partten of certain period 
+Current status : need to rewirte.
+
 ## Things to discuss on 02/05/2017
 1. Ideas of how to use average/smooth to reduce noise
   * average the data at the same time in a year or week (if we have enough data).
