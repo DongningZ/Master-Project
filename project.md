@@ -1,7 +1,9 @@
 # Master-Project
 ## Things to discuss on 09/05/2017
 1. look at the electricity data sets.
+
 The households are fine.
+
 The building data set is bit weird and not as stable as expected.
 
 
