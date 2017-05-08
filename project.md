@@ -12,10 +12,15 @@ More time needed to refine and debug these functions.
 
 There are mainly 3 functions:
 1. Simply display plot function
+
 Current status : basic structure done, need to add more features.
+
 2. Comparing plots function
+
 Current status :still working on basic structure as many levels of aggregation invovled.
+
 3. Partten of certain period 
+
 Current status : need to rewirte.
 
 ## Things to discuss on 02/05/2017
