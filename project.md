@@ -25,7 +25,8 @@ Comparison or interval of dates could be drawn on separate plots or one plot.
 If the one plot is chosen, the different month will match on the day of the week.
 
 Examples:
-
+Two date input of half-hourly data in daily plot.
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot.png)
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot.png)
 
 
