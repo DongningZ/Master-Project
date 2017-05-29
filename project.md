@@ -27,7 +27,7 @@ If the one plot is chosen, the different month will match on the day of the week
 Examples:
 
 
-
+###Things to do: possible shift on the hourly/half-hourly data on dayily plot.
 
 ## Things to discuss on 09/05/2017
 1. look at the electricity data sets.
