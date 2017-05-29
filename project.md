@@ -26,7 +26,7 @@ If the one plot is chosen, the different month will match on the day of the week
 
 Examples:
 
-
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/half-hour-daily.pdf)
 ###Things to do: possible shift on the hourly/half-hourly data on dayily plot.
 
 ## Things to discuss on 09/05/2017
