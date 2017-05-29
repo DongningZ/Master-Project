@@ -32,7 +32,7 @@ Interval input from 2014-03-02 to 2014-03-07
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot02.png)
 
 Single input month with adjacent 2 months from same year
-![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot03.png)
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot06.png)
 
 Single input month with 2 same months from same year
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot05.png)
