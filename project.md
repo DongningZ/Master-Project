@@ -1,7 +1,12 @@
 # Master-Project
 ## Update on 30/05/2017
 Now the function is done.
-It required a input data set, frequency and a specified date or a interval. Here is how it works.
+This is a flow chart of how the function works
+
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/Capture.JPG)
+
+
+It required a input data set, frequency and a specified date or a interval. Here is how it works in detail.
 1. Choose aggregation level from day, week, month, quarter, year.
 Data could be aggregated to the above level.
 Missing dates will be created and assigned with response of NA.
