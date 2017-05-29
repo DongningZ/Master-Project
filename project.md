@@ -1,4 +1,34 @@
 # Master-Project
+## Update on 30/05/2017
+Now the function is done.
+It required a input data set, frequency and a specified date or a interval. Here is how it works.
+1. Choose aggregation level from day, week, month, quarter, year.
+Data could be aggregated to the above level.
+Missing dates will be created and assigned with response of NA.
+
+2. Choose scale from dayily, monthly, weekly, quarterly, yearly
+Choose the scale of the plotting
+
+3. Input interval or specified date
+There are two ways of input the plotting interval: a specified date(month, year, day etc.), an interval of dates.
+The specified date is for the daily, yearly, monthly, hourly data. For example, to plot the daily data of May 2014, the input will be 2014 May.
+The interval of dates is for the daily data in weekly plots or monthly plots. For example, input (02-05-2017 to 02-06-2017) will generate plot(s) for this time interval in weekly or monthly.
+
+The begining of each plot is taken care of so that the monthly plot always start on 1st of the month, the weekly always start on sunday.
+
+5. For specified data input, Choose the way of  comparison 
+For specified data input, say daily in a specified month. There are two ways of comparsion are available: compare the same months from different years or compare the adjacent months from the same year. 
+The number of months could be further specified.
+
+6. Choose separate plots or one plot
+Comparison or interval of dates could be drawn on separate plots or one plot.
+If the one plot is chosen, the different month will match on the day of the week.
+
+Examples:
+
+
+
+
 ## Things to discuss on 09/05/2017
 1. look at the electricity data sets.
 
