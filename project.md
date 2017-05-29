@@ -27,12 +27,15 @@ If the one plot is chosen, the different month will match on the day of the week
 Examples:
 Two date input of half-hourly data in daily plot.
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot.png)
+
 Interval input from 2014-03-02 to 2014-03-07
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot02.png)
+
 Single input month with adjacent 2 months from same year
 ![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot03.png)
+
 Single input month with 2 same months from same year
-![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot04.png)
+![alt text](https://github.com/DongningZ/Master-Project/blob/master/Rplot05.png)
 
 
 ###Things to do: possible shift on the hourly/half-hourly data on dayily plot.
