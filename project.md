@@ -1,4 +1,10 @@
 # Master-Project
+## Update on 21/06/2016
+Flow of the function and possible proble.
+1. Change  the time to POSIXct variable (in this type data set, date and hour was separately stored in two columns. Input may vary.)
+2. Identify the continous time period or discrete time (now, the input is a list "input = list(year=2013, month=NULL, day =  NULL, period = NULL, start1=NULL, end = NULL)", where the year, month, day, period give the discrete period, start1 and end give the continous period.
+
+
 ## Update on 30/05/2017
 Now the function is done.
 This is a flow chart of how the function works
