@@ -115,28 +115,7 @@ window.POSIXct =
 
 
 
-################### 2. aggregation functions #################
-#### freq.r is a function that translate the aggregation level input into 
-#### character strings that could be recongized by the POSIXct class functions
-#### most of the aggregation levels could be eaily done by using as.character
-#### however, there are some irregular aggregation level, such as half an hour need to
-#### be corrected. New aggregation levels could be added in this function easily.
-#### for now, the function supports min, half an hour, day, hour, week, month, quarter, year.
-#### New aggregation levels could be added in this function easily.
-#### Arguments 
-#### x               The aggregation level
-freq.r = function(x){
-  switch(x,
-         min = "min",
-         halfanhour = "30 mins",
-         hour = "hour",
-         day = "day",
-         week = "week",
-         month = "month",
-         quarter = "quarter",
-         year = "year") }
-
-
+################### 2. aggregation function ##################
 #### aggre.na is a function that aggregate the data set by the aggregation level input.
 #### default aggregation function is sum which could be changed.
 #### This function detects missing time creates the missing entry with NA as response
@@ -145,20 +124,59 @@ freq.r = function(x){
 #### aggregation    The aggregation level
 #### fun            The aggregation function
 aggre.na = function(data, aggregation, fun = sum){
+  ## a switch function that helps translate the input aggregation level into
+  ## chararcter strings recongized by the POSIXct class functions
+  if(is.null(aggregation)){
+    
+    data.final = data
+    
+  } else {freq.r =  switch(aggregation,
+                           min = "min",
+                           halfanhour = "30 mins",
+                           hour = "hour",
+                           day = "day",
+                           week = "week",
+                           month = "month",
+                           quarter = "quarter",
+                           year = "year") 
   
-  data.h = aggregate(data$y, list(time=cut(data$time, freq.r(aggregation))),fun)
+  ## aggregation 
+  data.h = aggregate(data$y, list(time=cut(data$time, freq.r)),fun)
   
+  ## create a time Sequence that covers all the time from the 1st entry to the last
+  ## and set the reponse variable to NA, this would detect the missing dates in the data
   data.f = data.frame(time = as.POSIXct(as.character(data.h$time), tz = "UTC"),
                       y = data.h$x )
   
   time.seq = data.frame(time = seq(data.f[1,1], data.f[(dim(data.f)[1]),1],
-                                   by = freq.r(aggregation)), y = NA)
+                                   by = freq.r), y = NA)
   
-  
+
+  ## merge the time sequence and the data set after aggregated.
   data.full.seq = merge(time.seq, data.f, by = "time", all.x = TRUE)
   
   data.final =  data.frame(time = data.full.seq$time, y= data.full.seq$y.y)
+  }
 }
 
-################### 3. aggregation functions #################
+################### 3. scale functions #################
+
+
+
+
+################### 4. display function #################
+#### 
+####
+#### Arguments:
+#### time
+#### y
+display = function(time, y, freq = NULL ,start, end = start, aggregation = NULL, fun, 
+                   scale = NULL, comparsion = FALSE, no.com = 2, separate = FALSE, 
+                   main = "", ylab = "", xlab = "" ){
+  
+  
+}
+
+
+
 
