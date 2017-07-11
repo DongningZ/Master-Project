@@ -170,9 +170,15 @@ aggre.na = function(data, aggregation, fun = sum){
 #### Arguments:
 #### time
 #### y
-display = function(time, y, freq = NULL ,start, end = start, aggregation = NULL, fun, 
-                   scale = NULL, comparsion = FALSE, no.com = 2, separate = FALSE, 
+display = function(date, time = NULL,format = "%d/%m/%Y %H:%M", y, freq = NULL ,start, end = start, aggregation = NULL, fun, 
+                   scale = NULL, comparsion = FALSE, no.com = 2, separate = TRUE, log = FALSE
                    main = "", ylab = "", xlab = "" ){
+  
+  
+  data.time = as.POSIXct(paste(date, time, sep = " "), format = format, tz = "UTC")
+  
+  
+  data = data.frame(time = data.time, y = y)
   
   
 }

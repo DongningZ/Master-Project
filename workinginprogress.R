@@ -3,9 +3,10 @@ display = function(time, response, freq = NULL ,start, end = start, aggregation 
                    main = NULL, ylab = NULL, ){
   
   
-  xlab = 1
-  ylab = 2
-  main = 3
+  xlab = ""
+  ylab = ""
+  main = ""
+  aggregation = "quarter"
   data.1  = aggre.na(data, aggregation)
   
   if( scale == "total"){
@@ -18,72 +19,58 @@ display = function(time, response, freq = NULL ,start, end = start, aggregation 
   }
   
   if( scale == "year"){
-    
     data.1$year =  as.POSIXlt(data.1$time)$year+ 1900
     
-    data.byyear = split(data.final$data,data.final$data$year)
+    data.byyear = split(data.1,data.1$year)
     
-    firstyear = unique(data.final$data$year)[1]
-    
-    lastyear = tail(unique(data.final$data$year), n = 1)
-    
-    if (length(unique(as.POSIXlt(data.byyear[[1]][,1])$mon+1)) != 12){
+    if(separate == TRUE){
       
-      full.seq.firsty = data.frame(time = seq(
-        as.POSIXct(paste(firstyear, 1 , 1 , sep = "-"), format = "%Y-%m-%d", tz = "UTC"), 
-        as.POSIXct(paste(firstyear, 12 , 31 , sep = "-"), format = "%Y-%m-%d", tz = "UTC"),by = aggregation),
-        y = NA, y.log = NA, year = NA)
-      
-      merge.first = merge(full.seq.firsty,data.byyear[[1]] ,by = "time", all.x = TRUE)
-      
-      
-      data.byyear[[1]] = data.frame(time = merge.first$time, y = merge.first$y.y, 
-                                    y.log = merge.first$y.log.y,year = firstyear)
-    }
-    
-    if(firstyear!=lastyear ){
-      
-      lastv = length(data.byyear)
-      if (length(unique(as.POSIXlt(data.byyear[[lastv]][,1])$mon+1)) != 12){
-        
-        full.seq.lasty = data.frame(time = seq(
-          as.POSIXct(paste(lastyear, 1 , 1 , sep = "-"), format = "%Y-%m-%d", tz = "UTC"), 
-          as.POSIXct(paste(lastyear, 12 , 31 , sep = "-"), format = "%Y-%m-%d", tz = "UTC"),by = aggregation),
-          y = NA, y.log = NA, year = NA)
-        
-        merge.last = merge(full.seq.lasty,data.byyear[[lastv]] ,by = "time", all.x = TRUE)
-        
-        
-        data.byyear[[lastv]] = data.frame(time = merge.last$time, y = merge.last$y.y, 
-                                          y.log = merge.last$y.log.y,year = lastyear)
-      }}
-    
     for (i in 1:length(data.byyear)){
+      
+      xlimx =c(as.POSIXct(paste(names(data.byyear)[i], 1 , 1 ,sep = "-"), format = "%Y-%m-%d", tz = "UTC"),
+               as.POSIXct(paste(names(data.byyear)[i], 12 , 31 , sep = "-"), format = "%Y-%m-%d", tz = "UTC"))
+      
       plot(y ~ time, data = data.byyear[[i]], xlab = xlab, ylab = ylab, xaxt = "n", 
-           main = main, sub = paste(data.byyear[[i]]$year[1], "by" ,aggregation, sep = " "), type = "n")
+           main = main, sub = paste(data.byyear[[i]]$year[1], "by" ,aggregation, sep = " "), type = "n",
+           xlim = xlimx)
       
       lines(y ~ time, data = data.byyear[[i]])
       
-      axis.POSIXct(1, seq(data.byyear[[i]][1,1], data.byyear[[i]][dim(data.byyear[[i]])[1],1], by = "month"),
+      axis.POSIXct(1, seq(xlimx[1],xlimx[2], by = "month"),
                    format = "%b", cex.axis = 0.7, 
                    las = 1,tck = -0.01)
       
-      # axis.POSIXct(1,  seq(data.byyear[[i]][1,1], data.byyear[[i]][dim(data.byyear[[1]])[1],1], by = "day"),
-      #              labels = FALSE,format = "%d", 
-      #              cex.axis = 0.7, las = 1, tck = -0.005)
+      axis.POSIXct(1, seq(xlimx[1],xlimx[2], by = "day"),
+                   labels = FALSE,format = "%d", 
+                   cex.axis = 0.7, las = 1, tck = -0.005)
+    } } else {
+      
+      xlimx =c(as.POSIXct(paste(1 , 1 ,sep = "-"), format = "%m-%d", tz = "UTC"),
+               as.POSIXct(paste(12 , 31 , sep = "-"), format = "%m-%d", tz = "UTC"))
+      
+      plot(y ~ time, data = data.byyear[[i]], xlab = xlab, ylab = ylab, xaxt = "n", 
+           main = main, sub = paste(data.byyear[[i]]$year[1], "by" ,aggregation, sep = " "), type = "n",
+           xlim = xlimx)
+      
+      axis.POSIXct(1, seq(xlimx[1],xlimx[2], by = "month"),
+                   format = "%b", cex.axis = 0.7, 
+                   las = 1,tck = -0.01)
+      
+      axis.POSIXct(1, seq(xlimx[1],xlimx[2], by = "day"),
+                   labels = FALSE,format = "%d", 
+                   cex.axis = 0.7, las = 1, tck = -0.005)
+      for (i in 1:length(data.byyear)){
+        
+      lines(y ~ time, data = data.byyear[[i]])
+      }
       
     }
     
   }
-  
-  if(scale == "month"){
-    
-  }
-  
-}
-
-aggregation = NULL
-
 
 ### read-in format function
 ### 
+
+
+#### detect frequency or not?
+## if the aggregation is zero
